@@ -1,7 +1,7 @@
-package com.bravi.task.balancedBrackets;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class BalancedBrackets {
 
@@ -12,17 +12,13 @@ public class BalancedBrackets {
 	 * @param args
 	 */
 	public static void main(String args[]) {
-		String[] string_brackets = new String[4];
-		string_brackets[0] = "(){}[]";
-		string_brackets[1] = "[{()}](){}";
-		string_brackets[2] = "[]{()";
-		string_brackets[3] = "[{)]";
+		System.out.printf("Enter a balanced brackets: ");
+		Scanner scanner = new Scanner(System.in);
+		String string_brackets = scanner.next();
+		scanner.close();
 
 		BalancedBrackets balancedBrackets = new BalancedBrackets();
-
-		for (String brackets : string_brackets) {
-			System.out.println(new StringBuilder(MSG).append(balancedBrackets.isBracketsValid(brackets)));
-		}
+		System.out.println(new StringBuilder(MSG).append(balancedBrackets.isBracketsValid(string_brackets)));
 
 	}
 

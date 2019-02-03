@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  java:
+    image: ambiente_java:latest
+    volumes:
+      - ./:/home/projetos/balancedBrackets
+    command: java /home/projetos/balancedBrackets/src/BalancedBrackets.java
