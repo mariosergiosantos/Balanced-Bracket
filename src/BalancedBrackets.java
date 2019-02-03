@@ -42,12 +42,11 @@ public class BalancedBrackets {
 
 			// close brackets
 			if (String.valueOf(letter).equals(")") || String.valueOf(letter).equals("}")
-					|| String.valueOf(letter).equals("]")) {
+					|| String.valueOf(letter).equals("]") && !lhash.isEmpty()) {
 
-				// Retorna falso caso seja a primeira letra seja inválida
-				if (i == 0) {
+				// Retorna falso caso seja a primeira letra seja inválida ou não tenha brackets de abertura
+				if (i == 0 || lhash.isEmpty()) {
 					return false;
-
 					// Compara se as chaves são equivalente e remove da pilha de validação
 				} else if (lhash.get(lhash.size() - 1).equals("(") && String.valueOf(letter).equals(")")) {
 					lhash.remove(lhash.size() - 1);
